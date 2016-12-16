@@ -1,15 +1,10 @@
-									README 
+Multi-fragment Registration Library 
 ===============================================================================
-							Multi-fragment Registration Library 
-===============================================================================
-
 Multi-fragment Registration Library is a C++ Qt-based library for 2D-3D 
 atlas-based reconstruction and fracture reduction of traumatized long bones.   
 
-
- Description
+Description
 -------------------------------------------------------------------------------
-
 The main aim of the library is a 2D-3D reconstruction of long bones from plain
 radiographs. The reconstruction is based on deformable registration of 3D 
 statistical shape and intensity model to 2D X-ray images. The relative pose 
@@ -26,10 +21,9 @@ OpenGL shaders implementation of image similarity metrics.
 
 Version from 16 December 2016.
 
-    
- Features
+ 
+Features
 -------------------------------------------------------------------------------
-
  * Density-based non-rigid 2D-3D registration of shape model to radiographs   
  * Feature-based deformable 2D-3D registration     
  * Simultaneous reconstruction and fracture reduction of injured long bones
@@ -38,8 +32,7 @@ Version from 16 December 2016.
  * Fast registration ensured by OpenGL acceleration
  * etc.      
 
-
- Prerequisites
+Prerequisites
 -------------------------------------------------------------------------------
 Qt Toolkit in version 5.x or later is required. Other required librarires are 
 redistributed within the registration library package. The libraries are 
@@ -51,10 +44,8 @@ included:
     
 The library has been developped for usage with Windows 7 or later.
 
-
- Examples
+Examples
 -------------------------------------------------------------------------------
-
 To get started with the SSIM Renderer library, please have a look 
 at the included examples:
 
@@ -73,35 +64,27 @@ at the included examples:
    
 There is also a full reference manual available.
 
-
- Downloading
+Downloading
 -------------------------------------------------------------------------------
-
 The SSIM Renderer library can be further redistributed under the terms 
 of the LGPL version 3 open source license. 
 The library can be obtained from the following location: 
 <http://www.fit.vutbr.cz/research/prod/?id=505>
 
-
- Acknowledgement
+Acknowledgement
 -------------------------------------------------------------------------------
-
 This work has been supported by the Technology Agency of the Czech Republic 
 (TA CR, Project Id: TA04011606).
 
-
- Authors
+Authors
 -------------------------------------------------------------------------------
-
  * Ondrej Klima     (<iklima@fit.vutbr.cz>)
  * Petr Kleparnik   (<ikleparnik@fit.vutbr.cz>)
  * Michal Spanel    (<spanel@fit.vutbr.cz>)
  * Pavel Zemcik     (<zemcik@stud.fit.vutbr.cz>)
 
- 
- References
+References
 -------------------------------------------------------------------------------
-
 [1] KLIMA Ondrej, KLEPARNIK Petr, SPANEL Michal a ZEMCIK Pavel. Intensity-based 
     femoral atlas 2D/3D registration using Levenberg-Marquardt optimisation. 
     In: Biomedical Applications in Molecular, Structural, and Functional 
