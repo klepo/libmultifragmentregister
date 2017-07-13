@@ -61,13 +61,23 @@ public:
 
     QVector<QVector3D> getRotations();
     QVector<QVector3D> getTranslations();
+    QVector<QMatrix4x4> getTransformations();
 
     QVector3D getMeanTranslation();
     QVector3D getMeanRotation();
 
+    QVector<QVector3D> transformPoints(const QVector<QVector3D> & points);
+    QVector<QVector3D> transformPoints();
+    double pointToPointDistance(const QVector<QVector3D> & points);
+    double pointToPointDistance();
+    void setPoints(const QVector<QVector3D> & points);
 
     QVector<float>  getValues();
     QVector<float>  getTargetValues();
+
+    QVector<float> getVertexValues();
+    QVector<float> getTargetVertexValues();
+    QVector<float> getTargetValuesVertex();
 
     QVector<float> getStandardizedShapeParams();
     QVector<float> getShapeParams();
@@ -85,11 +95,13 @@ public:
     void setRotations(const QVector3D & rotations);
     void setTranslations(const QVector3D & translations);
     void setImages(const QVector<QImage> & images);
+    void setMasks(const QVector<QImage> & masks);
     void setCrops(const QVector<QRect> & crops);
     void setOpenGLCrops(const QVector<QRectF> & crops);
     void setAngles(const QVector<double> & angles);
     void setSizes(const QVector<QSize> & sizes);
     void setHistogramBinsCount(const QVector<int> & bins);
+    void setPoseEps(double eps);
 
     void paramsChanged();
 
@@ -107,6 +119,7 @@ public:
     void triangles(int *& triangles, int &nt);
 
     void renderNow();
+
 private:
     void optimize(
             sample_points (LibMultiFragmentRegister<MetricType>::*samples)(),
@@ -148,9 +161,7 @@ private:
 
 
     void updateMasks();
-    QVector<float> getVertexValues();
-    QVector<float> getTargetVertexValues();
-    QVector<float> getTargetValuesVertex();
+
 
     void setShapeParamsCount(unsigned int count = 0);
 

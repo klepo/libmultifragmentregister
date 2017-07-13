@@ -95,9 +95,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abf10d6cf36c628c0feb28b7b0c1f798c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_simple_vertex_metric.html#abf10d6cf36c628c0feb28b7b0c1f798c">setMesh</a> (SSIMRenderer::Mesh *mesh)</td></tr>
 <tr class="memdesc:abf10d6cf36c628c0feb28b7b0c1f798c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the shape model mesh.  <a href="#abf10d6cf36c628c0feb28b7b0c1f798c">More...</a><br /></td></tr>
 <tr class="separator:abf10d6cf36c628c0feb28b7b0c1f798c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85a70d9c56fd901db4eb73b6f5e18c96"><td class="memItemLeft" align="right" valign="top">virtual float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_simple_vertex_metric.html#a85a70d9c56fd901db4eb73b6f5e18c96">getValues</a> (const QVector&lt; QVector&lt; bool &gt; &gt; &amp;masks)</td></tr>
-<tr class="memdesc:a85a70d9c56fd901db4eb73b6f5e18c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the vertex metric current values.  <a href="#a85a70d9c56fd901db4eb73b6f5e18c96">More...</a><br /></td></tr>
-<tr class="separator:a85a70d9c56fd901db4eb73b6f5e18c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae53c779de9e05a1af7b2fa09196ef757"><td class="memItemLeft" align="right" valign="top">virtual float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_simple_vertex_metric.html#ae53c779de9e05a1af7b2fa09196ef757">getValues</a> (const QVector&lt; QVector&lt; bool &gt; &gt; &amp;masks, const QVector&lt; QVector3D &gt; &amp;pts)</td></tr>
+<tr class="memdesc:ae53c779de9e05a1af7b2fa09196ef757"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the vertex metric current values.  <a href="#ae53c779de9e05a1af7b2fa09196ef757">More...</a><br /></td></tr>
+<tr class="separator:ae53c779de9e05a1af7b2fa09196ef757"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe96dae1592d09b9b359fa4d6adca8f6"><td class="memItemLeft" align="right" valign="top">virtual float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_simple_vertex_metric.html#afe96dae1592d09b9b359fa4d6adca8f6">getTargetValues</a> ()</td></tr>
 <tr class="memdesc:afe96dae1592d09b9b359fa4d6adca8f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the target values of the vertex metric.  <a href="#afe96dae1592d09b9b359fa4d6adca8f6">More...</a><br /></td></tr>
 <tr class="separator:afe96dae1592d09b9b359fa4d6adca8f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,12 +173,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>myWrongVertices</b></t
 
 <p>Implements <a class="el" href="class_t_vertex_metric.html">TVertexMetric</a>.</p>
 
-<p>Definition at line <a class="el" href="tsimplevertexmetric_8cpp_source.html#l00070">70</a> of file <a class="el" href="tsimplevertexmetric_8cpp_source.html">tsimplevertexmetric.cpp</a>.</p>
+<p>Definition at line <a class="el" href="tsimplevertexmetric_8cpp_source.html#l00084">84</a> of file <a class="el" href="tsimplevertexmetric_8cpp_source.html">tsimplevertexmetric.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a85a70d9c56fd901db4eb73b6f5e18c96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85a70d9c56fd901db4eb73b6f5e18c96">&sect;&nbsp;</a></span>getValues()</h2>
+<a id="ae53c779de9e05a1af7b2fa09196ef757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae53c779de9e05a1af7b2fa09196ef757">&sect;&nbsp;</a></span>getValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,8 +190,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>myWrongVertices</b></t
           <td class="memname">float * TSimpleVertexMetric::getValues </td>
           <td>(</td>
           <td class="paramtype">const QVector&lt; QVector&lt; bool &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>masks</em></td><td>)</td>
+          <td class="paramname"><em>masks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QVector&lt; QVector3D &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -212,7 +222,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>myWrongVertices</b></t
 
 <p>Implements <a class="el" href="class_t_vertex_metric.html">TVertexMetric</a>.</p>
 
-<p>Definition at line <a class="el" href="tsimplevertexmetric_8cpp_source.html#l00044">44</a> of file <a class="el" href="tsimplevertexmetric_8cpp_source.html">tsimplevertexmetric.cpp</a>.</p>
+<p>Definition at line <a class="el" href="tsimplevertexmetric_8cpp_source.html#l00047">47</a> of file <a class="el" href="tsimplevertexmetric_8cpp_source.html">tsimplevertexmetric.cpp</a>.</p>
 
 </div>
 </div>
@@ -250,7 +260,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>myWrongVertices</b></t
 
 <p>Reimplemented from <a class="el" href="class_t_vertex_metric.html#a2cbf87d28be7a8c870ffb1df0a7f481f">TVertexMetric</a>.</p>
 
-<p>Definition at line <a class="el" href="tsimplevertexmetric_8cpp_source.html#l00079">79</a> of file <a class="el" href="tsimplevertexmetric_8cpp_source.html">tsimplevertexmetric.cpp</a>.</p>
+<p>Definition at line <a class="el" href="tsimplevertexmetric_8cpp_source.html#l00093">93</a> of file <a class="el" href="tsimplevertexmetric_8cpp_source.html">tsimplevertexmetric.cpp</a>.</p>
 
 </div>
 </div>
@@ -282,7 +292,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>myWrongVertices</b></t
 
 <p>Implements <a class="el" href="class_t_vertex_metric.html">TVertexMetric</a>.</p>
 
-<p>Definition at line <a class="el" href="tsimplevertexmetric_8cpp_source.html#l00093">93</a> of file <a class="el" href="tsimplevertexmetric_8cpp_source.html">tsimplevertexmetric.cpp</a>.</p>
+<p>Definition at line <a class="el" href="tsimplevertexmetric_8cpp_source.html#l00107">107</a> of file <a class="el" href="tsimplevertexmetric_8cpp_source.html">tsimplevertexmetric.cpp</a>.</p>
 
 </div>
 </div>
@@ -293,7 +303,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>myWrongVertices</b></t
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 16 2016 19:03:54 for Multi-fragment&nbsp;Registration&nbsp;Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 12 2017 16:41:28 for Multi-fragment&nbsp;Registration&nbsp;Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

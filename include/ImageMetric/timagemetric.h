@@ -41,6 +41,7 @@ public:
 
     virtual int valuesCount() const = 0;
     virtual void setImage(const QImage & image) = 0;
+    virtual void setMask(const QImage & mask);
     virtual void setHistogramBinsCount(int count);
 
     inline void setCrop(QRect crop)

@@ -42,8 +42,10 @@ TSquaredDifferencesVertexMetric::~TSquaredDifferencesVertexMetric()
  * @param masks Vector of masks of visible vertices from all radiographs
  * @return Vertex metric values
  */
-float * TSquaredDifferencesVertexMetric::getValues(const QVector<QVector<bool> > & masks)
+float * TSquaredDifferencesVertexMetric::getValues(const QVector<QVector<bool> > & masks, const QVector<QVector3D> &points)
 {
+    Q_UNUSED(points);
+
     const int n = myMesh->getNumberOfVertices();
     for(int i = 0; i < n; i++)
         myMask[i] = 0;
@@ -59,14 +61,21 @@ float * TSquaredDifferencesVertexMetric::getValues(const QVector<QVector<bool> >
     *myData = 0;
 
     int square;
+    int wrongVertices = 0;
     for(int i = 0; i < n; i++)
     {
-        square = (myMask[i] - myViewsNumber);
+        square = myMask[i] - myViewsNumber;
+        if(square != 0)
+            wrongVertices++;
+
         square *= square;
         *myData += square;
     }
 
-    *myData *= 10;
+    //qDebug() << wrongVertices;
+
+    //*myData *= 5;
+    //qDebug() << *myData;
     return myData;
 }
 

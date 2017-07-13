@@ -63,6 +63,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_lib_multi_fragment_register_abstract-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">LibMultiFragmentRegisterAbstract Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -88,6 +89,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a61158a4c276ccfca0fcf11a75e30056b"><td class="memItemLeft" align="right" valign="top"><a id="a61158a4c276ccfca0fcf11a75e30056b"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>optimizePose</b> ()=0</td></tr>
 <tr class="separator:a61158a4c276ccfca0fcf11a75e30056b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd09ee2a42fe3d60bda117120851f86a"><td class="memItemLeft" align="right" valign="top"><a id="abd09ee2a42fe3d60bda117120851f86a"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setPoseEps</b> (double eps)=0</td></tr>
+<tr class="separator:abd09ee2a42fe3d60bda117120851f86a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1540e56271171b9fa0ff3428b7600e5a"><td class="memItemLeft" align="right" valign="top"><a id="a1540e56271171b9fa0ff3428b7600e5a"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>optimizePoseShape</b> (unsigned int count=0)=0</td></tr>
 <tr class="separator:a1540e56271171b9fa0ff3428b7600e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,18 +119,36 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>enableMirrori
 <tr class="memitem:a0ba2e17674297128419ab17af529f4f3"><td class="memItemLeft" align="right" valign="top"><a id="a0ba2e17674297128419ab17af529f4f3"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setObserver</b> (<a class="el" href="class_t_observer.html">TObserver</a> *observer)=0</td></tr>
 <tr class="separator:a0ba2e17674297128419ab17af529f4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab205013f88a69c1d606691d9f73109d3"><td class="memItemLeft" align="right" valign="top"><a id="ab205013f88a69c1d606691d9f73109d3"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setPoints</b> (const QVector&lt; QVector3D &gt; &amp;points)=0</td></tr>
+<tr class="separator:ab205013f88a69c1d606691d9f73109d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab76debffd1797e5c12c95e46f1274b24"><td class="memItemLeft" align="right" valign="top"><a id="ab76debffd1797e5c12c95e46f1274b24"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setShapeModel</b> (SSIMRenderer::MatStatisticalDataFile *shapeFile)=0</td></tr>
 <tr class="separator:ab76debffd1797e5c12c95e46f1274b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac21610cf07222f3108ea635b82e9f297"><td class="memItemLeft" align="right" valign="top"><a id="ac21610cf07222f3108ea635b82e9f297"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setDensityModel</b> (SSIMRenderer::MatStatisticalDataFile *densityFile)=0</td></tr>
 <tr class="separator:ac21610cf07222f3108ea635b82e9f297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5809291a476203633ea2c90b5e9df5"><td class="memItemLeft" align="right" valign="top"><a id="a0a5809291a476203633ea2c90b5e9df5"></a>
+virtual QVector&lt; QVector3D &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>transformPoints</b> (const QVector&lt; QVector3D &gt; &amp;points)=0</td></tr>
+<tr class="separator:a0a5809291a476203633ea2c90b5e9df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95bbd4d6635e6a96c9a5f5d1bcc7c291"><td class="memItemLeft" align="right" valign="top"><a id="a95bbd4d6635e6a96c9a5f5d1bcc7c291"></a>
+virtual QVector&lt; QVector3D &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>transformPoints</b> ()=0</td></tr>
+<tr class="separator:a95bbd4d6635e6a96c9a5f5d1bcc7c291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7554cf33490b4cdcea0e33d71025a8c3"><td class="memItemLeft" align="right" valign="top"><a id="a7554cf33490b4cdcea0e33d71025a8c3"></a>
+virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>pointToPointDistance</b> (const QVector&lt; QVector3D &gt; &amp;points)=0</td></tr>
+<tr class="separator:a7554cf33490b4cdcea0e33d71025a8c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c93cfd16b0038fe58ef5e193e26fea9"><td class="memItemLeft" align="right" valign="top"><a id="a9c93cfd16b0038fe58ef5e193e26fea9"></a>
+virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>pointToPointDistance</b> ()=0</td></tr>
+<tr class="separator:a9c93cfd16b0038fe58ef5e193e26fea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d0e8646ad97bc96088afec635bcf9a2"><td class="memItemLeft" align="right" valign="top"><a id="a0d0e8646ad97bc96088afec635bcf9a2"></a>
 virtual QVector&lt; QVector3D &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getRotations</b> ()=0</td></tr>
 <tr class="separator:a0d0e8646ad97bc96088afec635bcf9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e851274ab7c7d889326be12ae23d1de"><td class="memItemLeft" align="right" valign="top"><a id="a7e851274ab7c7d889326be12ae23d1de"></a>
 virtual QVector&lt; QVector3D &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getTranslations</b> ()=0</td></tr>
 <tr class="separator:a7e851274ab7c7d889326be12ae23d1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52e6d3d6939d95eeeaad0d2160d91038"><td class="memItemLeft" align="right" valign="top"><a id="a52e6d3d6939d95eeeaad0d2160d91038"></a>
+virtual QVector&lt; QMatrix4x4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getTransformations</b> ()=0</td></tr>
+<tr class="separator:a52e6d3d6939d95eeeaad0d2160d91038"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f554fa9ffc1789b43953d80918c765a"><td class="memItemLeft" align="right" valign="top"><a id="a6f554fa9ffc1789b43953d80918c765a"></a>
 virtual QVector3D&#160;</td><td class="memItemRight" valign="bottom"><b>getMeanTranslation</b> ()=0</td></tr>
 <tr class="separator:a6f554fa9ffc1789b43953d80918c765a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,6 +167,12 @@ virtual QVector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom
 <tr class="memitem:a355af133e6ac55a62c965a18ebebb7e7"><td class="memItemLeft" align="right" valign="top"><a id="a355af133e6ac55a62c965a18ebebb7e7"></a>
 virtual QVector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getTargetValues</b> ()=0</td></tr>
 <tr class="separator:a355af133e6ac55a62c965a18ebebb7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a873faa665d5a68821cb9bc810a5624de"><td class="memItemLeft" align="right" valign="top"><a id="a873faa665d5a68821cb9bc810a5624de"></a>
+virtual QVector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getVertexValues</b> ()=0</td></tr>
+<tr class="separator:a873faa665d5a68821cb9bc810a5624de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a003455df21dfb0f6814b8bc43a5152d3"><td class="memItemLeft" align="right" valign="top"><a id="a003455df21dfb0f6814b8bc43a5152d3"></a>
+virtual QVector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getTargetVertexValues</b> ()=0</td></tr>
+<tr class="separator:a003455df21dfb0f6814b8bc43a5152d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50e7d934fba68ff28bd8bf751b2ca85a"><td class="memItemLeft" align="right" valign="top"><a id="a50e7d934fba68ff28bd8bf751b2ca85a"></a>
 virtual QVector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getStandardizedShapeParams</b> ()=0</td></tr>
 <tr class="separator:a50e7d934fba68ff28bd8bf751b2ca85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,6 +212,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setTranslatio
 <tr class="memitem:a7c1f37a69dc416c262783438f9f6954a"><td class="memItemLeft" align="right" valign="top"><a id="a7c1f37a69dc416c262783438f9f6954a"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setImages</b> (const QVector&lt; QImage &gt; &amp;images)=0</td></tr>
 <tr class="separator:a7c1f37a69dc416c262783438f9f6954a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16ac1492555010c3af92bb1328512b62"><td class="memItemLeft" align="right" valign="top"><a id="a16ac1492555010c3af92bb1328512b62"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setMasks</b> (const QVector&lt; QImage &gt; &amp;masks)=0</td></tr>
+<tr class="separator:a16ac1492555010c3af92bb1328512b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9142df33a8afec5caef74ce6d127599"><td class="memItemLeft" align="right" valign="top"><a id="aa9142df33a8afec5caef74ce6d127599"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setCrops</b> (const QVector&lt; QRect &gt; &amp;crops)=0</td></tr>
 <tr class="separator:aa9142df33a8afec5caef74ce6d127599"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -241,6 +272,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:acba6590860c38736b3facbd3a866a16a"><td class="memItemLeft" align="right" valign="top">static QRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lib_multi_fragment_register_abstract.html#acba6590860c38736b3facbd3a866a16a">cropImage</a> (const QImage &amp;image)</td></tr>
 <tr class="memdesc:acba6590860c38736b3facbd3a866a16a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trims given image.  <a href="#acba6590860c38736b3facbd3a866a16a">More...</a><br /></td></tr>
 <tr class="separator:acba6590860c38736b3facbd3a866a16a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:aeae38fcc28ce920a68b643767d469e05"><td class="memItemLeft" align="right" valign="top"><a id="aeae38fcc28ce920a68b643767d469e05"></a>
+QVector&lt; QVector3D &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>myPts</b></td></tr>
+<tr class="separator:aeae38fcc28ce920a68b643767d469e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class of the registration template core. </p>
@@ -402,7 +439,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 16 2016 19:03:54 for Multi-fragment&nbsp;Registration&nbsp;Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 12 2017 16:41:28 for Multi-fragment&nbsp;Registration&nbsp;Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

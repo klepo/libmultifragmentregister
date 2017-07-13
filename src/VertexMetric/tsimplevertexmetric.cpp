@@ -20,6 +20,9 @@
 #include "VertexMetric/tsimplevertexmetric.h"
 #include <assert.h>
 #include <QDebug>
+#define _USE_MATH_DEFINES
+#include <cmath>
+#include <math.h>
 
 /**
  * @brief Default constructor of TSimpleVertexMetric class
@@ -41,8 +44,10 @@ TSimpleVertexMetric::~TSimpleVertexMetric()
  * @param masks Vector of masks of visible vertices from all radiographs
  * @return Vertex metric values
  */
-float * TSimpleVertexMetric::getValues(const QVector<QVector<bool> > & masks)
+float * TSimpleVertexMetric::getValues(const QVector<QVector<bool> > & masks, const QVector<QVector3D> & pts)
 {
+    Q_UNUSED(pts);
+
     const int n = myMesh->getNumberOfVertices();
     for(int i = 0; i < n; i++)
         myData[i] = 0;
@@ -52,13 +57,22 @@ float * TSimpleVertexMetric::getValues(const QVector<QVector<bool> > & masks)
         assert(masks.at(i).size() == n);
         for(int j = 0; j < n; j++)
             if(masks.at(i).at(j))
-                myData[j] += 1;
+                myData[j] += 2;
     }
 
     myWrongVertices = 0;
     for(int i = 0; i < n; i++)
         if(myData[i] != myRefData[i])
             myWrongVertices++;
+
+//    qDebug() << myWrongVertices;
+/*
+    int i = 0;
+    for(; i < (n >> 1); i++)
+        myData[i] = zp; //distance;
+    for(; i < n; i++)
+        myData[i] = l; //distance2;
+*/
 
     return myData;
 }
@@ -83,7 +97,7 @@ void TSimpleVertexMetric::setMesh(SSIMRenderer::Mesh * mesh)
     myData    = new float[n]();
     myRefData = new float[n]();
     for(int i = 0; i < n; i++)
-        myRefData[i] = myViewsNumber * 1;
+        myRefData[i] = myViewsNumber * 2;
 }
 
 /**

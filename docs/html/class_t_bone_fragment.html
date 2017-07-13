@@ -63,6 +63,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_t_bone_fragment-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TBoneFragment&lt; MetricType &gt; Class Template Reference</div>  </div>
@@ -102,6 +103,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:aebb083ae852b5fd42902d98febf51cb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_bone_fragment.html#aebb083ae852b5fd42902d98febf51cb0">setDensityModel</a> (SSIMRenderer::MatStatisticalDataFile *densityFile)</td></tr>
 <tr class="memdesc:aebb083ae852b5fd42902d98febf51cb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the density model.  <a href="#aebb083ae852b5fd42902d98febf51cb0">More...</a><br /></td></tr>
 <tr class="separator:aebb083ae852b5fd42902d98febf51cb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a183542437528a2f08d51eeb111ee926e"><td class="memItemLeft" align="right" valign="top"><a id="a183542437528a2f08d51eeb111ee926e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setPoseEps</b> (double eps)</td></tr>
+<tr class="separator:a183542437528a2f08d51eeb111ee926e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2f8381c19beb68558cc1350406a489e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_bone_fragment.html#ab2f8381c19beb68558cc1350406a489e">setStandardizedShapeParams</a> (const QVector&lt; float &gt; &amp;shapeParams)</td></tr>
 <tr class="memdesc:ab2f8381c19beb68558cc1350406a489e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the standardized values of shape parameters.  <a href="#ab2f8381c19beb68558cc1350406a489e">More...</a><br /></td></tr>
 <tr class="separator:ab2f8381c19beb68558cc1350406a489e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,6 +130,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a3c772964abb0a4ac17d42a15b0dd975c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_bone_fragment.html#a3c772964abb0a4ac17d42a15b0dd975c">setRotation</a> (const QVector3D &amp;rotation)</td></tr>
 <tr class="memdesc:a3c772964abb0a4ac17d42a15b0dd975c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the rotation of the bone fragment.  <a href="#a3c772964abb0a4ac17d42a15b0dd975c">More...</a><br /></td></tr>
 <tr class="separator:a3c772964abb0a4ac17d42a15b0dd975c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a350ebea28957229e7e1d2560c6d6443a"><td class="memItemLeft" align="right" valign="top"><a id="a350ebea28957229e7e1d2560c6d6443a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setPoints</b> (const QVector&lt; QVector3D &gt; &amp;points)</td></tr>
+<tr class="separator:a350ebea28957229e7e1d2560c6d6443a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab75a1b3f4f263fb544cb082be2309993"><td class="memItemLeft" align="right" valign="top">QVector&lt; QVector3D &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_bone_fragment.html#ab75a1b3f4f263fb544cb082be2309993">getTransformedPoints</a> () const</td></tr>
+<tr class="memdesc:ab75a1b3f4f263fb544cb082be2309993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transorms the input point from the original space.  <a href="#ab75a1b3f4f263fb544cb082be2309993">More...</a><br /></td></tr>
+<tr class="separator:ab75a1b3f4f263fb544cb082be2309993"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab2bdaa6d803a3148011205d7fa1dbd4"><td class="memItemLeft" align="right" valign="top">QVector3D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_bone_fragment.html#aab2bdaa6d803a3148011205d7fa1dbd4">getTranslation</a> () const</td></tr>
 <tr class="memdesc:aab2bdaa6d803a3148011205d7fa1dbd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bone fragment translation.  <a href="#aab2bdaa6d803a3148011205d7fa1dbd4">More...</a><br /></td></tr>
 <tr class="separator:aab2bdaa6d803a3148011205d7fa1dbd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,6 +173,15 @@ QVector&lt; <a class="el" href="class_t_x_ray_view.html">TXRayView</a>&lt; Metri
 <tr class="memitem:a00fbfb368c29950c287eb3675a2ad7f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_bone_fragment.html#a00fbfb368c29950c287eb3675a2ad7f3">setObserver</a> (<a class="el" href="class_t_observer.html">TObserver</a> *observer)</td></tr>
 <tr class="memdesc:a00fbfb368c29950c287eb3675a2ad7f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the observer object.  <a href="#a00fbfb368c29950c287eb3675a2ad7f3">More...</a><br /></td></tr>
 <tr class="separator:a00fbfb368c29950c287eb3675a2ad7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ad597ff9a16525956e0a342e5501f8cb4"><td class="memItemLeft" align="right" valign="top"><a id="ad597ff9a16525956e0a342e5501f8cb4"></a>
+QVector&lt; QVector&lt; QVector3D &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>myPlusPoints</b></td></tr>
+<tr class="separator:ad597ff9a16525956e0a342e5501f8cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a863eca063e22f93e89b0bf8947885e33"><td class="memItemLeft" align="right" valign="top"><a id="a863eca063e22f93e89b0bf8947885e33"></a>
+QVector&lt; QVector&lt; QVector3D &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>myMinusPoints</b></td></tr>
+<tr class="separator:a863eca063e22f93e89b0bf8947885e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class MetricType&gt;<br />
@@ -233,7 +252,7 @@ template&lt;class MetricType &gt; </div>
 <p>Gets the bone fragment rotation. </p>
 <dl class="section return"><dt>Returns</dt><dd>Rotation of the fragment </dd></dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00070">70</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00071">71</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -257,7 +276,7 @@ template&lt;class MetricType &gt; </div>
 <p>Gets non-standardized shape parameters. </p>
 <dl class="section return"><dt>Returns</dt><dd>Vector of shape parameters </dd></dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00110">110</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00111">111</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -281,7 +300,31 @@ template&lt;class MetricType &gt; </div>
 <p>Gets shape parameters standardized by the standard deviation. </p>
 <dl class="section return"><dt>Returns</dt><dd>Vector of standardized shape parameters </dd></dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00093">93</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00094">94</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab75a1b3f4f263fb544cb082be2309993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab75a1b3f4f263fb544cb082be2309993">&sect;&nbsp;</a></span>getTransformedPoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MetricType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt; QVector3D &gt; <a class="el" href="class_t_bone_fragment.html">TBoneFragment</a>&lt; MetricType &gt;::getTransformedPoints </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transorms the input point from the original space. </p>
+<dl class="section return"><dt>Returns</dt><dd>Transformed point </dd></dl>
+
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00227">227</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -305,7 +348,7 @@ template&lt;class MetricType &gt; </div>
 <p>Gets the bone fragment translation. </p>
 <dl class="section return"><dt>Returns</dt><dd>Translation of the fragment </dd></dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00059">59</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00060">60</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -347,7 +390,7 @@ template&lt;class MetricType &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Jacobian matrix approximated by central differences method </dd></dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00127">127</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00135">135</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -371,7 +414,7 @@ template&lt;class MetricType &gt; </div>
 <p>Gets the Jacobian matrix for rotation parameters. </p>
 <dl class="section return"><dt>Returns</dt><dd>Central differences approximation of Jacobian matrix </dd></dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00308">308</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00342">342</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -401,7 +444,7 @@ template&lt;class MetricType &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00383">383</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00417">417</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -431,7 +474,7 @@ template&lt;class MetricType &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00426">426</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00460">460</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -461,7 +504,7 @@ template&lt;class MetricType &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00452">452</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00486">486</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -491,7 +534,7 @@ template&lt;class MetricType &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00361">361</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00395">395</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -521,7 +564,7 @@ template&lt;class MetricType &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00372">372</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00406">406</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -551,7 +594,7 @@ template&lt;class MetricType &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00394">394</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00428">428</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -581,7 +624,7 @@ template&lt;class MetricType &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00439">439</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00473">473</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -611,7 +654,7 @@ template&lt;class MetricType &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00409">409</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00443">443</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -641,7 +684,7 @@ template&lt;class MetricType &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00350">350</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00384">384</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -672,7 +715,7 @@ template&lt;class MetricType &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Jacobian matrix approximated by central differences method </dd></dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00216">216</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00250">250</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -696,7 +739,7 @@ template&lt;class MetricType &gt; </div>
 <p>Gets the Jacobian matrix for translation parameters. </p>
 <dl class="section return"><dt>Returns</dt><dd>Central differences approximation of Jacobian matrix </dd></dl>
 
-<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00320">320</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
+<p>Definition at line <a class="el" href="tbonefragment_8hpp_source.html#l00354">354</a> of file <a class="el" href="tbonefragment_8hpp_source.html">tbonefragment.hpp</a>.</p>
 
 </div>
 </div>
@@ -707,7 +750,7 @@ template&lt;class MetricType &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 16 2016 19:03:54 for Multi-fragment&nbsp;Registration&nbsp;Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 12 2017 16:41:28 for Multi-fragment&nbsp;Registration&nbsp;Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

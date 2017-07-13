@@ -95,9 +95,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7a82b1c312f6c9f3c50a6da8f8847793"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_squared_differences_vertex_metric.html#a7a82b1c312f6c9f3c50a6da8f8847793">setMesh</a> (SSIMRenderer::Mesh *mesh)</td></tr>
 <tr class="memdesc:a7a82b1c312f6c9f3c50a6da8f8847793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the shape model mesh.  <a href="#a7a82b1c312f6c9f3c50a6da8f8847793">More...</a><br /></td></tr>
 <tr class="separator:a7a82b1c312f6c9f3c50a6da8f8847793"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a139c7d667465e2e312074f302aca6f15"><td class="memItemLeft" align="right" valign="top">virtual float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_squared_differences_vertex_metric.html#a139c7d667465e2e312074f302aca6f15">getValues</a> (const QVector&lt; QVector&lt; bool &gt; &gt; &amp;masks)</td></tr>
-<tr class="memdesc:a139c7d667465e2e312074f302aca6f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the vertex metric current values.  <a href="#a139c7d667465e2e312074f302aca6f15">More...</a><br /></td></tr>
-<tr class="separator:a139c7d667465e2e312074f302aca6f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353dd07e2ced355170fc3ec0cac8dd3b"><td class="memItemLeft" align="right" valign="top">virtual float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_squared_differences_vertex_metric.html#a353dd07e2ced355170fc3ec0cac8dd3b">getValues</a> (const QVector&lt; QVector&lt; bool &gt; &gt; &amp;masks, const QVector&lt; QVector3D &gt; &amp;points)</td></tr>
+<tr class="memdesc:a353dd07e2ced355170fc3ec0cac8dd3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the vertex metric current values.  <a href="#a353dd07e2ced355170fc3ec0cac8dd3b">More...</a><br /></td></tr>
+<tr class="separator:a353dd07e2ced355170fc3ec0cac8dd3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31b6fc4e0323a7b1c53e493e95d44b31"><td class="memItemLeft" align="right" valign="top">virtual float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_squared_differences_vertex_metric.html#a31b6fc4e0323a7b1c53e493e95d44b31">getTargetValues</a> ()</td></tr>
 <tr class="memdesc:a31b6fc4e0323a7b1c53e493e95d44b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the target values of the vertex metric.  <a href="#a31b6fc4e0323a7b1c53e493e95d44b31">More...</a><br /></td></tr>
 <tr class="separator:a31b6fc4e0323a7b1c53e493e95d44b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,12 +172,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>myWrongVertices</b></t
 
 <p>Implements <a class="el" href="class_t_vertex_metric.html">TVertexMetric</a>.</p>
 
-<p>Definition at line <a class="el" href="tsquareddifferencesvertexmetric_8cpp_source.html#l00077">77</a> of file <a class="el" href="tsquareddifferencesvertexmetric_8cpp_source.html">tsquareddifferencesvertexmetric.cpp</a>.</p>
+<p>Definition at line <a class="el" href="tsquareddifferencesvertexmetric_8cpp_source.html#l00086">86</a> of file <a class="el" href="tsquareddifferencesvertexmetric_8cpp_source.html">tsquareddifferencesvertexmetric.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a139c7d667465e2e312074f302aca6f15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a139c7d667465e2e312074f302aca6f15">&sect;&nbsp;</a></span>getValues()</h2>
+<a id="a353dd07e2ced355170fc3ec0cac8dd3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a353dd07e2ced355170fc3ec0cac8dd3b">&sect;&nbsp;</a></span>getValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,8 +189,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>myWrongVertices</b></t
           <td class="memname">float * TSquaredDifferencesVertexMetric::getValues </td>
           <td>(</td>
           <td class="paramtype">const QVector&lt; QVector&lt; bool &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>masks</em></td><td>)</td>
+          <td class="paramname"><em>masks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QVector&lt; QVector3D &gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -249,7 +259,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>myWrongVertices</b></t
 
 <p>Reimplemented from <a class="el" href="class_t_vertex_metric.html#a2cbf87d28be7a8c870ffb1df0a7f481f">TVertexMetric</a>.</p>
 
-<p>Definition at line <a class="el" href="tsquareddifferencesvertexmetric_8cpp_source.html#l00086">86</a> of file <a class="el" href="tsquareddifferencesvertexmetric_8cpp_source.html">tsquareddifferencesvertexmetric.cpp</a>.</p>
+<p>Definition at line <a class="el" href="tsquareddifferencesvertexmetric_8cpp_source.html#l00095">95</a> of file <a class="el" href="tsquareddifferencesvertexmetric_8cpp_source.html">tsquareddifferencesvertexmetric.cpp</a>.</p>
 
 </div>
 </div>
@@ -281,7 +291,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>myWrongVertices</b></t
 
 <p>Implements <a class="el" href="class_t_vertex_metric.html">TVertexMetric</a>.</p>
 
-<p>Definition at line <a class="el" href="tsquareddifferencesvertexmetric_8cpp_source.html#l00102">102</a> of file <a class="el" href="tsquareddifferencesvertexmetric_8cpp_source.html">tsquareddifferencesvertexmetric.cpp</a>.</p>
+<p>Definition at line <a class="el" href="tsquareddifferencesvertexmetric_8cpp_source.html#l00111">111</a> of file <a class="el" href="tsquareddifferencesvertexmetric_8cpp_source.html">tsquareddifferencesvertexmetric.cpp</a>.</p>
 
 </div>
 </div>
@@ -292,7 +302,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>myWrongVertices</b></t
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 16 2016 19:03:54 for Multi-fragment&nbsp;Registration&nbsp;Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 12 2017 16:41:28 for Multi-fragment&nbsp;Registration&nbsp;Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

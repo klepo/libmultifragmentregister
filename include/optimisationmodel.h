@@ -27,6 +27,8 @@
 
 #include "Observer/tobserver.h"
 
+#include <QDebug>
+
 /**
  * @brief Optimisation model involving Levenberg-Marquardt algorithm
  */
@@ -210,9 +212,11 @@ public:
         const T&
     )
     {
+
         TObserver * observer = _libmfr->getObserver();
         if(observer != NULL)
         {
+            //std::cout << _libmfr->pointToPointDistance() << "\n";
             observer->iteration(_cur_iter, funct_value);
             _libmfr->paramsChanged();
             if(observer->images())
@@ -220,6 +224,7 @@ public:
             else
                 _libmfr->getImages();
         }
+
 
         if (_verbose)
         {

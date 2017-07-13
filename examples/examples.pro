@@ -11,6 +11,7 @@ TEMPLATE = subdirs
 SUBDIRS += \
     DensityRegistration \
     FeatureRegistration \
+    RigidRegistration \
     MultiFragmentFeatureRegistration \
 
 

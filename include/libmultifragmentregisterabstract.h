@@ -46,7 +46,10 @@ public:
     LibMultiFragmentRegisterAbstract() {}
     ~LibMultiFragmentRegisterAbstract() {}
 
+    QVector<QVector3D> myPts;
+
     virtual void optimizePose() = 0;
+    virtual void setPoseEps(double eps) = 0;
     virtual void optimizePoseShape(unsigned int count = 0) = 0;
     virtual void optimizePoseVertex() = 0;
     virtual void optimizePoseShapeVertex(unsigned int count = 0) = 0;
@@ -61,11 +64,18 @@ public:
 
     virtual void setObserver(TObserver * observer) = 0;
 
+    virtual void setPoints(const QVector<QVector3D> & points) = 0;
     virtual void setShapeModel(  SSIMRenderer::MatStatisticalDataFile * shapeFile) = 0;
     virtual void setDensityModel(SSIMRenderer::MatStatisticalDataFile * densityFile) = 0;
 
+    virtual QVector<QVector3D> transformPoints(const QVector<QVector3D> & points) = 0;
+    virtual QVector<QVector3D> transformPoints() = 0;
+    virtual double pointToPointDistance(const QVector<QVector3D> & points) = 0;
+    virtual double pointToPointDistance() = 0;
+
     virtual QVector<QVector3D> getRotations() = 0;
     virtual QVector<QVector3D> getTranslations() = 0;
+    virtual QVector<QMatrix4x4> getTransformations() = 0;
 
     virtual QVector3D getMeanTranslation() = 0;
     virtual QVector3D getMeanRotation() = 0;
@@ -74,6 +84,9 @@ public:
 
     virtual QVector<float>  getValues() = 0;
     virtual QVector<float>  getTargetValues() = 0;
+
+    virtual QVector<float>  getVertexValues() = 0;
+    virtual QVector<float>  getTargetVertexValues() = 0;
 
     virtual QVector<float> getStandardizedShapeParams() = 0;
     virtual QVector<float> getShapeParams() = 0;
@@ -91,6 +104,7 @@ public:
     virtual void setRotations(const QVector3D & rotations) = 0;
     virtual void setTranslations(const QVector3D & translations) = 0;
     virtual void setImages(const QVector<QImage> & images) = 0;
+    virtual void setMasks(const QVector<QImage> & masks) = 0;
     virtual void setCrops(const QVector<QRect> & crops) = 0;
     virtual void setOpenGLCrops(const QVector<QRectF> & crops) = 0;
     virtual void setAngles(const QVector<double> & angles) = 0;

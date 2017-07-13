@@ -184,9 +184,23 @@ $(function() {
 , <a class="el" href="class_t_open_c_l_squared_differences_metric.html#a69336316d6f11e649377aa34d157473f">TOpenCLSquaredDifferencesMetric</a>
 , <a class="el" href="class_t_open_g_l_normalized_mutual_information_metric.html#a146deb0b58617f7b91cef8423e70cc73">TOpenGLNormalizedMutualInformationMetric</a>
 , <a class="el" href="class_t_open_g_l_squared_differences_metric.html#aeb21e3ec730ffcdbe7b0fc4d1f3df69b">TOpenGLSquaredDifferencesMetric</a>
+, <a class="el" href="class_t_point2_point_vertex_metric.html#a6ed3be9a9bfbca47c493047c118e18eb">TPoint2PointVertexMetric</a>
 , <a class="el" href="class_t_simple_metric.html#a323017e124c3299b767eaaab15571fb7">TSimpleMetric</a>
+, <a class="el" href="class_t_simple_metric_mask.html#a2c2e236e4fc645247e9c4df198da38fb">TSimpleMetricMask</a>
 , <a class="el" href="class_t_simple_vertex_metric.html#afe96dae1592d09b9b359fa4d6adca8f6">TSimpleVertexMetric</a>
 , <a class="el" href="class_t_squared_differences_vertex_metric.html#a31b6fc4e0323a7b1c53e493e95d44b31">TSquaredDifferencesVertexMetric</a>
+</li>
+<li>getTargetValuesVertex()
+: <a class="el" href="class_lib_multi_fragment_register.html#a43a2957e0f8cb81b06acf476f8f80af7">LibMultiFragmentRegister&lt; MetricType &gt;</a>
+</li>
+<li>getTargetVertexValues()
+: <a class="el" href="class_lib_multi_fragment_register.html#a100cdae574ec71f634054801a66dfe73">LibMultiFragmentRegister&lt; MetricType &gt;</a>
+</li>
+<li>getTransformations()
+: <a class="el" href="class_lib_multi_fragment_register.html#a67222924ec969f9b649558322aaec647">LibMultiFragmentRegister&lt; MetricType &gt;</a>
+</li>
+<li>getTransformedPoints()
+: <a class="el" href="class_t_bone_fragment.html#ab75a1b3f4f263fb544cb082be2309993">TBoneFragment&lt; MetricType &gt;</a>
 </li>
 <li>getTranslation()
 : <a class="el" href="class_t_bone_fragment.html#aab2bdaa6d803a3148011205d7fa1dbd4">TBoneFragment&lt; MetricType &gt;</a>
@@ -202,9 +216,14 @@ $(function() {
 , <a class="el" href="class_t_open_c_l_squared_differences_metric.html#a00d66aa3cf6909b5db27bdbe1ae9966a">TOpenCLSquaredDifferencesMetric</a>
 , <a class="el" href="class_t_open_g_l_normalized_mutual_information_metric.html#aa193bcaf2bdc29ea29b9b72bb948d135">TOpenGLNormalizedMutualInformationMetric</a>
 , <a class="el" href="class_t_open_g_l_squared_differences_metric.html#a0cd5a02c376c9f8beb4dffb58c8f51b4">TOpenGLSquaredDifferencesMetric</a>
+, <a class="el" href="class_t_point2_point_vertex_metric.html#ac1d8ba048c1fd9067645a7f55d753761">TPoint2PointVertexMetric</a>
 , <a class="el" href="class_t_simple_metric.html#a569d94fbd141cf719797056fb7fb179e">TSimpleMetric</a>
-, <a class="el" href="class_t_simple_vertex_metric.html#a85a70d9c56fd901db4eb73b6f5e18c96">TSimpleVertexMetric</a>
-, <a class="el" href="class_t_squared_differences_vertex_metric.html#a139c7d667465e2e312074f302aca6f15">TSquaredDifferencesVertexMetric</a>
+, <a class="el" href="class_t_simple_metric_mask.html#a13cef70888fb217667644409ae83ded8">TSimpleMetricMask</a>
+, <a class="el" href="class_t_simple_vertex_metric.html#ae53c779de9e05a1af7b2fa09196ef757">TSimpleVertexMetric</a>
+, <a class="el" href="class_t_squared_differences_vertex_metric.html#a353dd07e2ced355170fc3ec0cac8dd3b">TSquaredDifferencesVertexMetric</a>
+</li>
+<li>getVertexValues()
+: <a class="el" href="class_lib_multi_fragment_register.html#a0e8d63a90fcf5278f171326e494fa4ff">LibMultiFragmentRegister&lt; MetricType &gt;</a>
 </li>
 <li>getWrongVerticesCount()
 : <a class="el" href="class_lib_multi_fragment_register.html#a7af3b2b376cb65830b91b3201e5f99c2">LibMultiFragmentRegister&lt; MetricType &gt;</a>
@@ -267,6 +286,9 @@ $(function() {
 <li>paramsChanged()
 : <a class="el" href="class_lib_multi_fragment_register.html#a71a6829139ef80a158a01e0f424fe484">LibMultiFragmentRegister&lt; MetricType &gt;</a>
 </li>
+<li>pointToPointDistance()
+: <a class="el" href="class_lib_multi_fragment_register.html#a3d7294f14dc36e6dc162d612e2c5b242">LibMultiFragmentRegister&lt; MetricType &gt;</a>
+</li>
 <li>poseGradient()
 : <a class="el" href="class_t_bone_fragment.html#a41c3a0bdf13e961d2ce9ac5f64000544">TBoneFragment&lt; MetricType &gt;</a>
 </li>
@@ -325,12 +347,21 @@ $(function() {
 , <a class="el" href="class_t_open_g_l_normalized_mutual_information_metric.html#a86f8fc8806349ad2115e1fcfc942738b">TOpenGLNormalizedMutualInformationMetric</a>
 , <a class="el" href="class_t_open_g_l_squared_differences_metric.html#ab8255252a6d02c5b401f95ed7a291230">TOpenGLSquaredDifferencesMetric</a>
 , <a class="el" href="class_t_simple_metric.html#a3ac71c5e988579b4f188600869b45fbf">TSimpleMetric</a>
+, <a class="el" href="class_t_simple_metric_mask.html#aa3ca16a7bbdb2964772a42eba0bccb10">TSimpleMetricMask</a>
 </li>
 <li>setImages()
 : <a class="el" href="class_lib_multi_fragment_register.html#a6e8f2580515f7d9fa46e4562f2f84176">LibMultiFragmentRegister&lt; MetricType &gt;</a>
 </li>
+<li>setMask()
+: <a class="el" href="class_t_image_metric.html#a19d37c3b043367605ac4a14cf71d3d66">TImageMetric</a>
+, <a class="el" href="class_t_simple_metric_mask.html#a300a0cb571fd3ea10028b1fba9577ee1">TSimpleMetricMask</a>
+</li>
+<li>setMasks()
+: <a class="el" href="class_lib_multi_fragment_register.html#a7e12158636f2553b4d5e6967425f0384">LibMultiFragmentRegister&lt; MetricType &gt;</a>
+</li>
 <li>setMesh()
-: <a class="el" href="class_t_simple_vertex_metric.html#abf10d6cf36c628c0feb28b7b0c1f798c">TSimpleVertexMetric</a>
+: <a class="el" href="class_t_point2_point_vertex_metric.html#adbe136cd5854f6433663f6da0423cf2b">TPoint2PointVertexMetric</a>
+, <a class="el" href="class_t_simple_vertex_metric.html#abf10d6cf36c628c0feb28b7b0c1f798c">TSimpleVertexMetric</a>
 , <a class="el" href="class_t_squared_differences_vertex_metric.html#a7a82b1c312f6c9f3c50a6da8f8847793">TSquaredDifferencesVertexMetric</a>
 , <a class="el" href="class_t_vertex_metric.html#a2cbf87d28be7a8c870ffb1df0a7f481f">TVertexMetric</a>
 </li>
@@ -380,7 +411,7 @@ $(function() {
 : <a class="el" href="class_t_bone_fragment.html#ac956026023d58666ed16cd5e316bff82">TBoneFragment&lt; MetricType &gt;</a>
 </li>
 <li>setTranslations()
-: <a class="el" href="class_lib_multi_fragment_register.html#a71d01ed3a6992fbaf4100aa858aafb20">LibMultiFragmentRegister&lt; MetricType &gt;</a>
+: <a class="el" href="class_lib_multi_fragment_register.html#a54c0f18f7d2b8e5ee32f28380bd0e3b1">LibMultiFragmentRegister&lt; MetricType &gt;</a>
 </li>
 <li>setViewsNumber()
 : <a class="el" href="class_t_vertex_metric.html#a2f5f84a192d662bfca295d395b9c91d2">TVertexMetric</a>
@@ -426,6 +457,12 @@ $(function() {
 <li>TOpenGLSquaredDifferencesMetric()
 : <a class="el" href="class_t_open_g_l_squared_differences_metric.html#ab25aec8c0409b7c533cfa49241977b68">TOpenGLSquaredDifferencesMetric</a>
 </li>
+<li>TPoint2PointVertexMetric()
+: <a class="el" href="class_t_point2_point_vertex_metric.html#a4830e85752a552cf7c3c7fbb6cff1c52">TPoint2PointVertexMetric</a>
+</li>
+<li>transformPoints()
+: <a class="el" href="class_lib_multi_fragment_register.html#afb8216ff6231fe550fbea03fbb2b2908">LibMultiFragmentRegister&lt; MetricType &gt;</a>
+</li>
 <li>translationGradient()
 : <a class="el" href="class_t_bone_fragment.html#a5d63c79e6cb38157644d08700b5c201b">TBoneFragment&lt; MetricType &gt;</a>
 </li>
@@ -438,6 +475,9 @@ $(function() {
 </li>
 <li>TSimpleMetric()
 : <a class="el" href="class_t_simple_metric.html#a9f5cb45e9f2af262226780cf3c062b76">TSimpleMetric</a>
+</li>
+<li>TSimpleMetricMask()
+: <a class="el" href="class_t_simple_metric_mask.html#ad23293b517d8d6243d9b60cad305d8ec">TSimpleMetricMask</a>
 </li>
 <li>TSimpleVertexMetric()
 : <a class="el" href="class_t_simple_vertex_metric.html#a96262a4f044da7a5acd8cf26ec854305">TSimpleVertexMetric</a>
@@ -472,7 +512,9 @@ $(function() {
 , <a class="el" href="class_t_open_c_l_squared_differences_metric.html#a9b6f64341633ba0b8b1a53ddc5aa70bf">TOpenCLSquaredDifferencesMetric</a>
 , <a class="el" href="class_t_open_g_l_normalized_mutual_information_metric.html#a8ded51d2dde4aaacac95632b3af52d9d">TOpenGLNormalizedMutualInformationMetric</a>
 , <a class="el" href="class_t_open_g_l_squared_differences_metric.html#a64f4d7affc61fae9e891964952b0b3a3">TOpenGLSquaredDifferencesMetric</a>
+, <a class="el" href="class_t_point2_point_vertex_metric.html#a4189b9091b0fd741ac55e0ed5f730ae7">TPoint2PointVertexMetric</a>
 , <a class="el" href="class_t_simple_metric.html#a81f3ad796ebda59c8b1eaaaf6323f715">TSimpleMetric</a>
+, <a class="el" href="class_t_simple_metric_mask.html#a5ce3fb18af143121fbc99dfa14f46f4d">TSimpleMetricMask</a>
 , <a class="el" href="class_t_simple_vertex_metric.html#a5e9d9e4f5456e31dad7e4dea373c1322">TSimpleVertexMetric</a>
 , <a class="el" href="class_t_squared_differences_vertex_metric.html#ab899edc22faa5270ae693c58bf4bf97d">TSquaredDifferencesVertexMetric</a>
 </li>
@@ -513,8 +555,14 @@ $(function() {
 <li>~TOpenGLSquaredDifferencesMetric()
 : <a class="el" href="class_t_open_g_l_squared_differences_metric.html#aa7a2ecf6828829f84d8b1f2ca92a6b21">TOpenGLSquaredDifferencesMetric</a>
 </li>
+<li>~TPoint2PointVertexMetric()
+: <a class="el" href="class_t_point2_point_vertex_metric.html#a1a8ea02ddd39700765a4c3e40b1c285f">TPoint2PointVertexMetric</a>
+</li>
 <li>~TSimpleMetric()
 : <a class="el" href="class_t_simple_metric.html#a99f6cc5dd0441d0aaf0ac8c5888e4527">TSimpleMetric</a>
+</li>
+<li>~TSimpleMetricMask()
+: <a class="el" href="class_t_simple_metric_mask.html#a3c2b216e89ebc7cadb19218f6898e29d">TSimpleMetricMask</a>
 </li>
 <li>~TSimpleVertexMetric()
 : <a class="el" href="class_t_simple_vertex_metric.html#a3bee7dc3b032e0582ced3fc92cd60807">TSimpleVertexMetric</a>
@@ -532,7 +580,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 16 2016 19:03:54 for Multi-fragment&nbsp;Registration&nbsp;Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 12 2017 16:41:28 for Multi-fragment&nbsp;Registration&nbsp;Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

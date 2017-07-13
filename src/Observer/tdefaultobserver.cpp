@@ -114,6 +114,7 @@ void TDefaultObserver::afterMetric()
 void TDefaultObserver::beforeRegistration()
 {
     myRegistrationTimer.start();
+    //qDebug() << "beforeRegistration";
 }
 
 /**
@@ -137,7 +138,6 @@ void TDefaultObserver::iteration(int i, float value)
     if(myStream != 0)
         (*myStream) << value << ";";
 
-
     myValues << value;
     myIterations++;
 }
@@ -148,6 +148,7 @@ void TDefaultObserver::iteration(int i, float value)
  */
 void TDefaultObserver::downloadImages(const QVector<QImage> & images)
 {
+    //qDebug() << "observer::downloadImages";
     //for(int i = 0; i < images.size() / 2; i++)
     for(int i = 0; i < images.size(); i++)
     {
@@ -183,9 +184,10 @@ void TDefaultObserver::downloadImages(const QVector<QImage> & images)
 
         QStringList list;
         list << myPath << "/" << QString::number(i) << "_" << QString::number(myIterations) << ".png";
-        QTransform tr;
-        tr.rotate(180);
-        result.transformed(tr).save(list.join(""));
+        result.save(list.join(""));
+        //QTransform tr;
+        //tr.rotate(180);
+        //result.transformed(tr).save(list.join(""));
 
     }
     /*

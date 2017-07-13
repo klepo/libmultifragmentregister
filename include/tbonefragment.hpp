@@ -27,7 +27,8 @@
 template <class MetricType>
 TBoneFragment<MetricType>::TBoneFragment(int ViewCount):
     myValuesCount(0),
-    myObserver(0)
+    myObserver(0),
+    myPoseEps(1.0)
 {
     assert(ViewCount > 0);
     myXRayViews.resize(ViewCount);    
@@ -116,6 +117,13 @@ getShapeParams()
     return QVector<float>::fromStdVector(v);
 }
 
+template <class MetricType>
+void TBoneFragment<MetricType>::
+setPoseEps(double eps)
+{
+    myPoseEps = eps;
+}
+
 /**
  * @brief Computes Jacobian matrix of the pose parameters
  * @param[in] setPose Function to adjust the scene using given pose parameters
@@ -132,7 +140,10 @@ poseGradient(setPoseType setPose,
     const QVector3D pose = (this->*getPose)();
 
     const int ParamCount = 3;
-    const float eps = 1;
+    myPlusPoints.resize(ParamCount);
+    myMinusPoints.resize(ParamCount);
+    //const float eps = 0.1;
+    const float eps = myPoseEps;
     for(int i = 0; i < myXRayViews.size(); i++)
         myXRayViews[i]->resizeVertexMasks(ParamCount);
 
@@ -168,6 +179,7 @@ poseGradient(setPoseType setPose,
                 myObserver->afterRendering();
 
             myXRayViews[i]->myPlusMasks[col] = myRenderers[i]->getVerticesMask(vertices, vn, myXRayViews[i]->getOpenGLCrop(), myXRayViews[i]->getAngle());
+            myPlusPoints[col] = getTransformedPoints();
 
             // toto zkusit predavat jako floatove pole, ne jako vektor
             float * v = myXRayViews[i]->getMetric()->getValues();
@@ -188,6 +200,7 @@ poseGradient(setPoseType setPose,
                 myObserver->afterRendering();
 
             myXRayViews[i]->myMinusMasks[col] = myRenderers[i]->getVerticesMask(vertices, vn, myXRayViews[i]->getOpenGLCrop(), myXRayViews[i]->getAngle());
+            myMinusPoints[col] = getTransformedPoints();
 
             // toto zkusit predavat jako floatove pole, ne jako vektor
             float * v = myXRayViews[i]->getMetric()->getValues();
@@ -205,6 +218,27 @@ poseGradient(setPoseType setPose,
     return result;
 }
 
+/**
+ * @brief Transorms the input point from the original space
+ * @return Transformed point
+ */
+template <class MetricType>
+QVector<QVector3D> TBoneFragment<MetricType>::
+getTransformedPoints() const
+{
+    QMatrix4x4 m = myRenderers.at(0)->getTransformationMatrix();
+    QVector<QVector3D> result;
+    for(int i = 0; i < myPoints.size(); i++)
+        result << QVector4D(m.inverted() * QVector4D(myPoints.at(i), 1)).toVector3DAffine();
+    return result;
+}
+
+template <class MetricType>
+void TBoneFragment<MetricType>::
+setPoints(const QVector<QVector3D> & points)
+{
+    myPoints = points;
+}
 
 /**
  * @brief Computes Jacobian matrix of the shape parameters

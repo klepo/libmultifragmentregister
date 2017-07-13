@@ -79,8 +79,9 @@ Inheritance diagram for TVertexMetric:</div>
  <div class="center">
   <img src="class_t_vertex_metric.png" usemap="#TVertexMetric_map" alt=""/>
   <map id="TVertexMetric_map" name="TVertexMetric_map">
-<area href="class_t_simple_vertex_metric.html" title="Simple vertex metric. " alt="TSimpleVertexMetric" shape="rect" coords="0,56,205,80"/>
-<area href="class_t_squared_differences_vertex_metric.html" title="Sum of squared differences vertex metric. " alt="TSquaredDifferencesVertexMetric" shape="rect" coords="215,56,420,80"/>
+<area href="class_t_point2_point_vertex_metric.html" title="Point to point vertex metric. " alt="TPoint2PointVertexMetric" shape="rect" coords="0,56,205,80"/>
+<area href="class_t_simple_vertex_metric.html" title="Simple vertex metric. " alt="TSimpleVertexMetric" shape="rect" coords="215,56,420,80"/>
+<area href="class_t_squared_differences_vertex_metric.html" title="Sum of squared differences vertex metric. " alt="TSquaredDifferencesVertexMetric" shape="rect" coords="430,56,635,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -100,9 +101,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2f5f84a192d662bfca295d395b9c91d2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_vertex_metric.html#a2f5f84a192d662bfca295d395b9c91d2">setViewsNumber</a> (int views)</td></tr>
 <tr class="memdesc:a2f5f84a192d662bfca295d395b9c91d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of radiographs per one bone fragment.  <a href="#a2f5f84a192d662bfca295d395b9c91d2">More...</a><br /></td></tr>
 <tr class="separator:a2f5f84a192d662bfca295d395b9c91d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56c5498b7a51f235eafdaca807232f50"><td class="memItemLeft" align="right" valign="top"><a id="a56c5498b7a51f235eafdaca807232f50"></a>
-virtual float *&#160;</td><td class="memItemRight" valign="bottom"><b>getValues</b> (const QVector&lt; QVector&lt; bool &gt; &gt; &amp;masks)=0</td></tr>
-<tr class="separator:a56c5498b7a51f235eafdaca807232f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7533cfb6db4c5ea57c66d840f3aa516a"><td class="memItemLeft" align="right" valign="top"><a id="a7533cfb6db4c5ea57c66d840f3aa516a"></a>
+virtual float *&#160;</td><td class="memItemRight" valign="bottom"><b>getValues</b> (const QVector&lt; QVector&lt; bool &gt; &gt; &amp;masks, const QVector&lt; QVector3D &gt; &amp;points)=0</td></tr>
+<tr class="separator:a7533cfb6db4c5ea57c66d840f3aa516a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bc46447ee5044615e1d55cd8d8d6cf7"><td class="memItemLeft" align="right" valign="top"><a id="a3bc46447ee5044615e1d55cd8d8d6cf7"></a>
 virtual float *&#160;</td><td class="memItemRight" valign="bottom"><b>getTargetValues</b> ()=0</td></tr>
 <tr class="separator:a3bc46447ee5044615e1d55cd8d8d6cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,7 +169,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>myWrongVertices</b></t
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="class_t_simple_vertex_metric.html#abf10d6cf36c628c0feb28b7b0c1f798c">TSimpleVertexMetric</a>, and <a class="el" href="class_t_squared_differences_vertex_metric.html#a7a82b1c312f6c9f3c50a6da8f8847793">TSquaredDifferencesVertexMetric</a>.</p>
+<p>Reimplemented in <a class="el" href="class_t_point2_point_vertex_metric.html#adbe136cd5854f6433663f6da0423cf2b">TPoint2PointVertexMetric</a>, <a class="el" href="class_t_simple_vertex_metric.html#abf10d6cf36c628c0feb28b7b0c1f798c">TSimpleVertexMetric</a>, and <a class="el" href="class_t_squared_differences_vertex_metric.html#a7a82b1c312f6c9f3c50a6da8f8847793">TSquaredDifferencesVertexMetric</a>.</p>
 
 <p>Definition at line <a class="el" href="tvertexmetric_8cpp_source.html#l00026">26</a> of file <a class="el" href="tvertexmetric_8cpp_source.html">tvertexmetric.cpp</a>.</p>
 
@@ -217,7 +218,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>myWrongVertices</b></t
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Dec 16 2016 19:03:54 for Multi-fragment&nbsp;Registration&nbsp;Library by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 12 2017 16:41:28 for Multi-fragment&nbsp;Registration&nbsp;Library by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.12
 </small></address>

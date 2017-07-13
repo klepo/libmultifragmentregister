@@ -38,6 +38,7 @@ public:
 
     void setShapeModel(  SSIMRenderer::MatStatisticalDataFile * shapeFile);
     void setDensityModel(SSIMRenderer::MatStatisticalDataFile * densityFile);
+    void setPoseEps(double eps);
 
     void setStandardizedShapeParams(  const QVector<float> & shapeParams);
     void setStandardizedDensityParams(const QVector<float> & densityParams);
@@ -49,6 +50,8 @@ public:
 
     void setTranslation(const QVector3D & translation);
     void setRotation(const QVector3D & rotation);
+    void setPoints(const QVector<QVector3D> & points);
+    QVector<QVector3D> getTransformedPoints() const;
 
     QVector3D getTranslation() const;
     QVector3D getRotation() const;
@@ -84,18 +87,23 @@ public:
     }
 
     void setObserver(TObserver * observer);
+    QVector<QVector<QVector3D> > myPlusPoints;
+    QVector<QVector<QVector3D> > myMinusPoints;
+
 
 signals:
 
 public slots:
 
 private:
+    QVector<QVector3D> myPoints;
     QVector<TXRayView<MetricType> *> myXRayViews;
     QVector<SSIMRenderer::OffscreenRenderer *> myRenderers;
     QVector<MetricType *> myMetrics;
     int myValuesCount;
 
     TObserver * myObserver;
+    double myPoseEps;
 };
 
 #include "tbonefragment.hpp"

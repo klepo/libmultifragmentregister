@@ -35,7 +35,7 @@ public:
     virtual void setMesh(SSIMRenderer::Mesh *mesh);
     virtual void setViewsNumber(int views);
 
-    virtual float * getValues(const QVector<QVector<bool> > & masks) = 0;
+    virtual float * getValues(const QVector<QVector<bool> > & masks, const QVector<QVector3D> & points) = 0;
     virtual float * getTargetValues() = 0;
 
     inline int getWrongVerticesCount() const

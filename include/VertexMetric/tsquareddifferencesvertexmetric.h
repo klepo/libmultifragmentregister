@@ -33,7 +33,7 @@ public:
 
     virtual void setMesh(SSIMRenderer::Mesh * mesh);
 
-    virtual float * getValues(const QVector<QVector<bool> > & masks);
+    virtual float * getValues(const QVector<QVector<bool> > & masks, const QVector<QVector3D> & points);
     virtual float * getTargetValues();
 
     virtual int valuesCount() const;

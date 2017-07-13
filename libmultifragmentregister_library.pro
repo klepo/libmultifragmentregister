@@ -48,6 +48,8 @@ SOURCES += \
     src/VertexMetric/tsimplevertexmetric.cpp \
     src/VertexMetric/tsquareddifferencesvertexmetric.cpp \
     src/libmultifragmentregisterabstract.cpp \
+    src/VertexMetric/tpoint2pointvertexmetric.cpp \
+    src/ImageMetric/tsimplemetricmask.cpp
 
 
 HEADERS += \
@@ -72,7 +74,9 @@ HEADERS += \
     include/VertexMetric/tvertexmetric.h \
     include/VertexMetric/tsimplevertexmetric.h \
     include/libmultifragmentregisterabstract.h \
-    include/VertexMetric/tsquareddifferencesvertexmetric.h
+    include/VertexMetric/tsquareddifferencesvertexmetric.h \
+    include/VertexMetric/tpoint2pointvertexmetric.h \
+    include/ImageMetric/tsimplemetricmask.h
 
 # Dependents
 include(libmultifragmentregister_dependents.pri)

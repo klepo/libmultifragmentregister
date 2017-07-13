@@ -45,3 +45,10 @@ void TImageMetric::setHistogramBinsCount(int count)
 {
 }
 
+/**
+ * @brief Sets a mask of ignored points
+ * @param mask
+ */
+void TImageMetric::setMask(const QImage & mask)
+{
+}

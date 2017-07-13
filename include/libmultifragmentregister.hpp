@@ -194,6 +194,8 @@ optimize(
     if(myObserver != NULL)
         myObserver->beforeRegistration();
 
+    //qDebug() << "zacatek optimalizace";
+
     parameter_vector v = (this->*toVector)();
     typedef LibMultiFragmentRegister<MetricType> libmfr_type;
     libmfr_solve_least_squares_lm(libmfr_objective_delta_stop_strategy<libmfr_type>(1e-7, 150, this),
@@ -205,6 +207,104 @@ optimize(
 
     if(myObserver != NULL)
         myObserver->afterRegistration();
+
+    //(this->*fromVector_)(v);
+    //getImages();
+}
+
+/**
+ * @brief pointToPointDistance
+ * @param points
+ * @return
+ */
+
+template <class MetricType>
+double LibMultiFragmentRegister<MetricType>::
+pointToPointDistance(const QVector<QVector3D> & points)
+{
+    assert(myBoneFragments.size() == 2);
+    QVector<QVector3D> pts(points.size());
+    int i = 0;
+    foreach (TBoneFragment<MetricType> * boneFragment, myBoneFragments)
+    {
+        QMatrix4x4 m = boneFragment->getRenderers().at(0)->getTransformationMatrix();
+        pts[i] = QVector4D(m.inverted() * QVector4D(points.at(i), 1)).toVector3DAffine();
+        i+=2;
+    }
+    //qDebug() << pts;
+    return (pts.at(0) - pts.at(2)).length();
+}
+
+/**
+ * @brief pointToPointDistance
+ * @param points
+ * @return
+ */
+
+template <class MetricType>
+QVector<QVector3D> LibMultiFragmentRegister<MetricType>::
+transformPoints(const QVector<QVector3D> & points)
+{
+    assert(myBoneFragments.size() == 2);
+    QVector<QVector3D> pts;
+    int i = 0;
+    const int c = points.count() / myBoneFragments.count();
+    foreach (TBoneFragment<MetricType> * boneFragment, myBoneFragments)
+    {
+        /*
+        QMatrix4x4 m = boneFragment->getRenderers().at(0)->getTransformationMatrix();
+        pts[i] = QVector4D(m.inverted() * QVector4D(points.at(i), 1)).toVector3DAffine();
+        i++;
+        */
+        QMatrix4x4 m = boneFragment->getRenderers().at(0)->getTransformationMatrix();
+        for(int j = 0; j < points.mid(i, c).size(); j++)
+        {
+            QVector3D p = points.mid(i, c).at(j);
+            pts << QVector4D(m.inverted() * QVector4D(p, 1)).toVector3DAffine();
+        }
+        i += c;
+    }
+    return pts;
+}
+
+
+template <class MetricType>
+void LibMultiFragmentRegister<MetricType>::
+setPoints(const QVector<QVector3D> & points)
+{
+    myPts = points;
+    const int c = points.count() / myBoneFragments.count();
+    int i = 0;
+    foreach (TBoneFragment<MetricType> * boneFragment, myBoneFragments)
+    {
+        boneFragment->setPoints(points.mid(i, c));
+        //qDebug() << "body:" << points.mid(i, c);
+        i += c;
+    }
+}
+
+/**
+ * @brief
+ * @param
+ * @return
+ */
+template <class MetricType>
+double LibMultiFragmentRegister<MetricType>::
+pointToPointDistance()
+{
+    return pointToPointDistance(myPts);
+}
+
+/**
+ * @brief
+ * @param
+ * @return
+ */
+template <class MetricType>
+QVector<QVector3D> LibMultiFragmentRegister<MetricType>::
+transformPoints()
+{
+    return transformPoints(myPts);
 }
 
 /**
@@ -234,6 +334,21 @@ getTranslations()
     unsigned int i = 0;
     foreach(TBoneFragment<MetricType> * boneFragment, myBoneFragments)
         result[i++] = boneFragment->getTranslation();
+    return result;
+}
+
+/**
+ * @brief Gets current transformation matrix for each bone fragment
+ * @return Vector of transformation matrices
+ */
+template <class MetricType>
+QVector<QMatrix4x4> LibMultiFragmentRegister<MetricType>::
+getTransformations()
+{
+    QVector<QMatrix4x4> result(myBoneFragments.size());
+    unsigned int i = 0;
+    foreach(TBoneFragment<MetricType> * boneFragment, myBoneFragments)
+        result[i++] = boneFragment->getRenderers().at(0)->getTransformationMatrix();
     return result;
 }
 
@@ -339,6 +454,14 @@ TObserver * LibMultiFragmentRegister<MetricType>::
 getObserver()
 {
     return myObserver;
+}
+
+template <class MetricType>
+void LibMultiFragmentRegister<MetricType>::
+setPoseEps(double eps)
+{
+    foreach(TBoneFragment<MetricType> * boneFragment, myBoneFragments)
+        boneFragment->setPoseEps(eps);
 }
 
 /**
@@ -462,6 +585,7 @@ template <class MetricType>
 sample_points LibMultiFragmentRegister<MetricType>::
 data_points()
 {
+    //qDebug() << "data_points" << getTargetValues().count() << myValuesCount;
     assert(myValuesCount > 0);
     sample_points result;
     input_vector input(1);
@@ -487,6 +611,7 @@ double LibMultiFragmentRegister<MetricType>::
 getResidual(const std::pair<input_vector, double>& data,
             const parameter_vector& params)
 {
+    //qDebug() << "getResidual";
     int i = static_cast<int>(data.first(0));
     if(i == 0)
     {
@@ -528,6 +653,8 @@ parameter_vector LibMultiFragmentRegister<MetricType>::
 getGradient(const std::pair<input_vector, double>& data,
             const parameter_vector& params)
 {
+    //qDebug() << "getGradient";
+
     int i = static_cast<int>(data.first(0));
     if(i == 0)
     {
@@ -541,6 +668,19 @@ getGradient(const std::pair<input_vector, double>& data,
 
     return result;
 
+}
+
+/**
+ * @brief Sets mask of ignored pixels in target radiographs
+ * @param[in] masks Vector of input masks
+ */
+template <class MetricType>
+void LibMultiFragmentRegister<MetricType>::
+setMasks(const QVector<QImage> & masks)
+{
+    unsigned int i = 0;
+    foreach (MetricType * metric, myMetrics)
+        metric->setMask(masks.at(i++));
 }
 
 /**
@@ -577,6 +717,7 @@ template <class MetricType>
 dlib::matrix<float> LibMultiFragmentRegister<MetricType>::
 poseGradient()
 {
+    //qDebug() << "poseGradient";
     dlib::matrix<float> result = dlib::zeros_matrix<float>(
                                             myValuesCount,
                                             6 * myBoneFragments.size()
@@ -603,6 +744,7 @@ poseGradient()
         col += 3;
         row += valuesCount;
     }
+    //qDebug() << "poseGradient::end";
     return result;
 }
 
@@ -681,8 +823,15 @@ poseGradientVertex()
         i += 1;
     }
 
-
     delete[] vertices;
+
+    QVector<QVector<QVector3D> > points(myBoneFragments.size());
+    i = 0;
+    foreach(TBoneFragment<MetricType> * boneFragment, myBoneFragments)
+    {
+        points[i] = boneFragment->getTransformedPoints();
+        i++;
+    }
 
     // tzn. do plus masks i minus masks ulozit to samy
 
@@ -707,6 +856,18 @@ poseGradientVertex()
             }
             k += 1;
         }
+        k = 0;
+        foreach(TBoneFragment<MetricType> * boneFragment, myBoneFragments)
+        {
+            boneFragment->myPlusPoints.resize(3);
+            boneFragment->myMinusPoints.resize(3);
+            for(int i = 0; i < 3; i++)
+            {
+                boneFragment->myPlusPoints[i] = points[k];
+                boneFragment->myMinusPoints[i] = points[k];
+            }
+            k++;
+        }
 
         dlib::set_subm(result,
               dlib::range(row, row + valuesCount - 1),
@@ -729,14 +890,16 @@ poseGradientVertex()
                 minusMasks[i] = XRayView->myMinusMasks.at(p);
                 i += 1;
             }
-            float * values = myVertexMetric->getValues(plusMasks);
+            float * values = myVertexMetric->getValues(plusMasks, QVector<QVector3D>() << myBoneFragments.at(0)->myPlusPoints.at(p) << myBoneFragments.at(1)->myPlusPoints.at(p));
             for(int j = 0; j < myVertexMetric->valuesCount(); j++)
-                result(myValuesCount + j, col + p) = values[j] / 2;
+                result(myValuesCount + j, col + p) = values[j]/2;
 
-            myVertexMetric->getValues(minusMasks);
+            //qDebug() << "poseGradientMinus:" << (QVector<QVector3D>() << myBoneFragments.at(0)->myMinusPoints.at(p) << myBoneFragments.at(1)->myMinusPoints.at(p)).size();
+            myVertexMetric->getValues(minusMasks, QVector<QVector3D>() << myBoneFragments.at(0)->myMinusPoints.at(p) << myBoneFragments.at(1)->myMinusPoints.at(p));
             for(int j = 0; j < myVertexMetric->valuesCount(); j++)
-                result(myValuesCount + j, col + p) -= values[j] / 2;
+                result(myValuesCount + j, col + p) -= values[j]/2;
 
+            //qDebug() << ((myBoneFragments.at(0)->myPlusPoints.at(p) - myBoneFragments.at(1)->myPlusPoints.at(p)).length() - (myBoneFragments.at(0)->myMinusPoints.at(p) - myBoneFragments.at(1)->myMinusPoints.at(p)).length()) / 2;
         }
 
         col += 3;
@@ -762,14 +925,16 @@ poseGradientVertex()
                 minusMasks[i] = XRayView->myMinusMasks.at(p);
                 i += 1;
             }
-            float * values = myVertexMetric->getValues(plusMasks);
+            float * values = myVertexMetric->getValues(plusMasks, QVector<QVector3D>() << myBoneFragments.at(0)->myPlusPoints.at(p) << myBoneFragments.at(1)->myPlusPoints.at(p));
             for(int j = 0; j < myVertexMetric->valuesCount(); j++)
                 result(myValuesCount + j, col + p) = values[j] / 2;
 
-            myVertexMetric->getValues(minusMasks);
+            //qDebug() << "poseGradientPlus:" << (QVector<QVector3D>() << myBoneFragments.at(0)->myMinusPoints.at(p) << myBoneFragments.at(1)->myMinusPoints.at(p)).size();
+            myVertexMetric->getValues(minusMasks, QVector<QVector3D>() << myBoneFragments.at(0)->myMinusPoints.at(p) << myBoneFragments.at(1)->myMinusPoints.at(p));
             for(int j = 0; j < myVertexMetric->valuesCount(); j++)
                 result(myValuesCount + j, col + p) -= values[j] / 2;
 
+            //qDebug() << ((myBoneFragments.at(0)->myPlusPoints.at(p) - myBoneFragments.at(1)->myPlusPoints.at(p)).length() - (myBoneFragments.at(0)->myMinusPoints.at(p) - myBoneFragments.at(1)->myMinusPoints.at(p)).length()) / 2;
         }
 
         col += 3;
@@ -831,11 +996,13 @@ poseShapeGradientVertex()
             i += 1;
         }
 
-        float * values = myVertexMetric->getValues(plusMasks);
+        //qDebug() << "shapeGradientPlus" << transformPoints().size();
+        float * values = myVertexMetric->getValues(plusMasks, transformPoints());
         for(int j = 0; j < myVertexMetric->valuesCount(); j++)
             result(myValuesCount + j, pose.nc() + p) = values[j] / 2;
 
-        myVertexMetric->getValues(minusMasks);
+        //qDebug() << "shapeGradientMinus" << transformPoints().size();
+        myVertexMetric->getValues(minusMasks, transformPoints());
         for(int j = 0; j < myVertexMetric->valuesCount(); j++)
             result(myValuesCount + j, pose.nc() + p) -= values[j] / 2;
 
@@ -935,7 +1102,7 @@ getVertexValues()
     foreach(TXRayView<MetricType> * XRayView, myXRayViews)
         masks[i++] = XRayView->getMask();
 
-    float * values = myVertexMetric->getValues(masks);
+    float * values = myVertexMetric->getValues(masks, transformPoints());
     std::vector<float> vector;
     vector.assign(values, values + myVertexMetric->valuesCount());
     return QVector<float>::fromStdVector(vector);
@@ -1320,11 +1487,13 @@ exportEachStl(QString fileName, bool transform, bool crop, bool lengthFix,
     const int n = myRenderers[0]->getMesh()->getNumberOfVertices();
     foreach(TBoneFragment<MetricType> * boneFragment, myBoneFragments)
     {
+        // export proximalniho a distalniho fragmentu
         if(crop)
         {
             float * v = NULL;            
             boneFragment->getRenderers()[0]->getRecomputedVertices(v);
-            QVector<bool> msk = boneFragment->getRenderers()[0]->getVerticesMask(v, n, myOpenGLCrops.at(i*myViewCount), myAngles.at(i*myViewCount));
+            QVector<bool> msk = boneFragment->getRenderers()[0]->getVerticesMask(v, n, myOpenGLCrops.at(i*myViewCount), 0);
+
 
 
             /* vypocet masky podle orezove roviny */
@@ -1333,16 +1502,14 @@ exportEachStl(QString fileName, bool transform, bool crop, bool lengthFix,
             QVector<QVector3D> vertices = boneFragment->getRenderers()[0]->getRecomputedVertices(true);
             for(int j = 0; j < msk2.size(); j++)
             {
-                msk2[j] = (QVector3D::dotProduct(vertices[j], normals[i2]) + ds[i2])*signs[i2] <= 0;
+                msk2[j] = (QVector3D::dotProduct(vertices[j], normals[i2]) + ds[i2])*signs[i2] >= 0;
             }
             if(!lengthFix)
-            {
+            {                
                 msk2 = msk;
             }
 
             msks[i] = msk2;
-
-
 
             boneFragment->getRenderers()[0]->exportSTL(fileName + "." + QString::number(i) + ".stl", transform, msk2, 0);
             delete v;
@@ -1353,6 +1520,7 @@ exportEachStl(QString fileName, bool transform, bool crop, bool lengthFix,
         }
         i += 1;
     }
+    // export vnitrniho klinu
     if(!transform && crop)
     {
         QVector<bool> msk(n);

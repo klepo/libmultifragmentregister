@@ -62,6 +62,8 @@ void TSimpleMetric::setImage(const QImage & image)
     for(int row = 0; row < mirrored.height(); row++)
         for(int col = 0; col < mirrored.width(); col++)
             myRefData[i++] = qRed(mirrored.pixel(col, row)) / 255.0;
+
+    //*myRefData = 0;
 }
 
 /**
@@ -74,6 +76,8 @@ void TSimpleMetric::setImage(const QImage & image)
  */
 float * TSimpleMetric::getValues()
 {
+    //qDebug() << "TSimpleMetric::getValues" << myN;
+
     if(myObserver != NULL)
         myObserver->beforeMetric();
 
@@ -95,6 +99,7 @@ float * TSimpleMetric::getValues()
         myObserver->afterMetric();
 
     delete[] myOriginalData;
+    //*myData = 0;
     return myData;
 }
 
