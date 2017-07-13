@@ -19,7 +19,7 @@ a bone reconstructed from multiple fragments is ensured by proposed vertex
 metric. The reconstruction pipeline is accelerated using OpenGL rendering and 
 OpenGL shaders implementation of image similarity metrics.
 
-Version from 16 December 2016.
+Version from 12 July 2017.
 
  
 Features
