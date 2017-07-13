@@ -4,5 +4,5 @@
 =====================
 [Statistical Shape and Intensity Models GPU-Accelerated Renderer Library](https://github.com/klepo/ssimrenderer)
 =====================
-[MESH](libmesh/README.md)
+[MESH](libmesh/README)
 =====================
