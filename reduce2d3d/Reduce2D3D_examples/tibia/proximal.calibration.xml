@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<traumatech>
+  <slice>
+    <filename>C:/Reduce2D3D_examples/tibia/0.png</filename>
+    <focal>foo</focal>
+    <sizex>foo</sizex>
+    <sizey>foo</sizey>
+    <matrix>
+      foo foo foo foo
+      foo foo foo foo
+      foo foo foo foo
+      foo foo foo foo      
+    </matrix>
+    <camera>-882.12 -141.18 17.679</camera>
+<ptdet>135.23 114.1 215.1</ptdet>
+<ptdet>125.83 113.87 -221.47</ptdet>
+<ptdet>122.82 -441.08 213.53</ptdet>
+<ptdet>113.43 -441.31 -223.04</ptdet>
+  </slice>
+  <slice>
+    <filename>C:/Reduce2D3D_examples/tibia/1.png</filename>
+    <focal>foo</focal>
+    <sizex>foo</sizex>
+    <sizey>foo</sizey>
+    <matrix>
+      foo foo foo foo
+      foo foo foo foo
+      foo foo foo foo
+      foo foo foo foo      
+    </matrix>
+    <camera>-18.371 -979.54 67.851</camera>
+<ptdet>-238.93 15.127 333.15</ptdet>
+<ptdet>-242.45 9.9571 -213.05</ptdet>
+<ptdet>228.98 9.5947 329.87</ptdet>
+<ptdet>225.45 4.4246 -216.33</ptdet>
+  </slice>
+  <model>
+    <ptmodel>foo foo foo</ptmodel>
+    <ptmodel>foo foo foo</ptmodel>
+    <ptmodel>foo foo foo</ptmodel>
+    <ptmodel>foo foo foo</ptmodel>
+    <ptmodel>foo foo foo</ptmodel>
+    <ptmodel>foo foo foo</ptmodel>
+  </model>
+</traumatech>

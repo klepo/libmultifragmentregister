@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reduce2d3d>
+<setup fragments="2" views="2" verbose="1" vertexMetric="1" method="BW-PD-msk" manualInit="1" />
+<model mirror="0" shape="C:/Reduce2D3D_examples/femur/shape.mat" density="C:/Reduce2D3D_examples/femur/density.b0.mat" tetra="C:/Reduce2D3D_examples/femur/mean.mesh" />
+<output surface="C:/Reduce2D3D_examples/femur/results/femur" file="C:/Reduce2D3D_examples/femur/results/femur.pose.xml" transform="0" crop="1" cutPlanes="0" />
+<images save="1" path="C:/Reduce2D3D_examples/femur/images" />
+<measurement save="1" file="C:/Reduce2D3D_examples/femur/results/measurement.xml" hausdorff="1" mesh="C:/Reduce2D3D_examples/femur/femur.reference.ply" />
+<fragment calibration="C:/Reduce2D3D_examples/femur/proximal.calibration.xml">
+<rotation x="7" y="1" z="15" />
+<translation x="-12" y="154" z="-59" />
+<crop x="1829" y="1109" width="847" height="1868" />
+<crop x="1942" y="817" width="515" height="1881" />
+<vertexCrop x="1829" y="1057" width="847" height="1920" />
+<vertexCrop x="1942" y="792" width="618" height="1906" />
+<mask path="C:/Reduce2D3D_examples/femur/mask.0.png" />
+<mask path="C:/Reduce2D3D_examples/femur/mask.1.png" />
+</fragment>
+<fragment calibration="C:/Reduce2D3D_examples/femur/distal.calibration.xml">
+<rotation x="1" y="355" z="7" />
+<translation x="-59" y="113" z="52" />
+<crop x="1601" y="389" width="711" height="1485" />
+<crop x="1798" y="201" width="702" height="1409" />
+<vertexCrop x="1601" y="425" width="711" height="1461" />
+<vertexCrop x="1797" y="1" width="731" height="1622" />
+<mask path="C:/Reduce2D3D_examples/femur/mask.2.png" />
+<mask path="C:/Reduce2D3D_examples/femur/mask.3.png" />
+</fragment>
+</reduce2d3d>

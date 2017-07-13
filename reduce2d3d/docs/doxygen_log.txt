@@ -1,0 +1,45 @@
+warning: source examples is not a readable file or directory... skipping.
+warning: source examples is not a readable file or directory... skipping.
+D:/Traumatech/svn/projects/reduce2d3d/src/main.cpp:48: warning: Member main(int argc, char *argv[]) (function) of file main.cpp is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/src/poseestimator.cpp:28: warning: Member PI (macro definition) of file poseestimator.cpp is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/src/poseestimator.cpp:30: warning: Member radian_to_degree(double ENTER) (function) of file poseestimator.cpp is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/cropestimator.h:34: warning: Member myCrop (variable) of class cropestimator is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/cropestimator.h:35: warning: Member myOpenGLCrop (variable) of class cropestimator is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/poseestimator.h:49: warning: Member myNormal (variable) of class PoseEstimator is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/poseestimator.h:50: warning: Member myD (variable) of class PoseEstimator is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/poseestimator.h:51: warning: Member mySign (variable) of class PoseEstimator is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/poseestimator.h:54: warning: Member myPoint (variable) of class PoseEstimator is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/poseestimator.h:56: warning: Member myLength (variable) of class PoseEstimator is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/poseestimator.h:58: warning: Member size (variable) of class PoseEstimator is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:46: warning: Member perspective (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:47: warning: Member image (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:48: warning: Member mask (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:49: warning: Member crop (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:50: warning: Member vertexCrop (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:51: warning: Member point1 (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:52: warning: Member point2 (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:54: warning: Member rotation (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:55: warning: Member translation (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:57: warning: Member overflow (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:59: warning: Member verbose (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:60: warning: Member hausdorff (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:61: warning: Member vertexMetric (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:62: warning: Member rotate (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:63: warning: Member mirror (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:64: warning: Member manualInit (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:65: warning: Member refLength (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:66: warning: Member length (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:67: warning: Member views (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:68: warning: Member fragments (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:70: warning: Member method (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:71: warning: Member algorithm (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:72: warning: Member path (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:73: warning: Member imagesPath (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:74: warning: Member measurementFile (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:75: warning: Member refModelFileName (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:76: warning: Member saveImages (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:77: warning: Member saveMeasurement (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:79: warning: Member outCrop (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:80: warning: Member transform (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:81: warning: Member lengthFix (variable) of class xmlparser is not documented.
+D:/Traumatech/svn/projects/reduce2d3d/include/xmlparser.h:82: warning: Member cutPlanes (variable) of class xmlparser is not documented.

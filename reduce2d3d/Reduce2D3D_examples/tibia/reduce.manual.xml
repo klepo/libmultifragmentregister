@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reduce2d3d>
+<setup fragments="2" views="2" verbose="1" vertexMetric="1" method="BW-PD" manualInit="1" />
+<model mirror="1" shape="C:/Reduce2D3D_examples/tibia/shape.mat" density="C:/Reduce2D3D_examples/tibia/density.b0.mat" tetra="C:/Reduce2D3D_examples/tibia/mean.mesh" />
+<output surface="C:/Reduce2D3D_examples/tibia/results/tibia" file="C:/Reduce2D3D_examples/tibia/results/pose.tibia.xml" transform="0" crop="1" cutPlanes="0" />
+<images save="1" path="C:/Reduce2D3D_examples/tibia/images" />
+<measurement save="1" file="C:/Reduce2D3D_examples/tibia/results/measurement.xml" hausdorff="1" mesh="C:/Reduce2D3D_examples/tibia/tibia.reference.ply" />
+<fragment calibration="C:/Reduce2D3D_examples/tibia/proximal.calibration.xml">
+<rotation x="7" y="355" z="282" />
+<translation x="15" y="-141" z="-19" />
+<crop x="1073" y="262" width="784" height="1139" />
+<crop x="1082" y="981" width="691" height="1258" />
+<vertexCrop x="1112" y="285" width="717" height="1220" />
+<vertexCrop x="1085" y="981" width="660" height="1318" />
+</fragment>
+<fragment calibration="C:/Reduce2D3D_examples/tibia/distal.calibration.xml">
+<rotation x="0" y="3" z="282" />
+<translation x="-26" y="-110" z="74" />
+<crop x="987" y="1090" width="493" height="1358" />
+<crop x="997" y="1852" width="563" height="1283" />
+<vertexCrop x="1011" y="1041" width="523" height="1416" />
+<vertexCrop x="1047" y="1832" width="503" height="1321" />
+</fragment>
+</reduce2d3d>

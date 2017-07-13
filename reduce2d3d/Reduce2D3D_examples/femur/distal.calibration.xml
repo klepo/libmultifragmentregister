@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<traumatech>
+  <slice>
+    <filename>C:/Reduce2D3D_examples/femur/2.png</filename>
+    <focal>foo</focal>
+    <sizex>foo</sizex>
+    <sizey>foo</sizey>
+    <matrix>
+      foo foo foo foo
+      foo foo foo foo
+      foo foo foo foo
+      foo foo foo foo      
+    </matrix>
+    <camera>-33.532 1021 -7.5505</camera>
+<ptdet>-385.07 17.904 -282.47</ptdet>
+<ptdet>-381.17 4.2443 217.06</ptdet>
+<ptdet>223.24 -8.9718 -287.42</ptdet>
+<ptdet>227.13 -22.631 212.11</ptdet>
+  </slice>
+  <slice>
+    <filename>C:/Reduce2D3D_examples/femur/3.png</filename>
+    <focal>foo</focal>
+    <sizex>foo</sizex>
+    <sizey>foo</sizey>
+    <matrix>
+      foo foo foo foo
+      foo foo foo foo
+      foo foo foo foo
+      foo foo foo foo      
+    </matrix>
+    <camera>-857.46 100.82 11.145</camera>
+<ptdet>107.72 -236.26 -242.36</ptdet>
+<ptdet>119.8 -239.43 209.61</ptdet>
+<ptdet>132.31 360.12 -240.48</ptdet>
+<ptdet>144.4 356.94 211.5</ptdet>
+  </slice>
+  <model>
+    <ptmodel>foo foo foo</ptmodel>
+    <ptmodel>foo foo foo</ptmodel>
+    <ptmodel>foo foo foo</ptmodel>
+    <ptmodel>foo foo foo</ptmodel>
+    <ptmodel>foo foo foo</ptmodel>
+    <ptmodel>foo foo foo</ptmodel>
+  </model>
+</traumatech>
