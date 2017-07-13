@@ -1,9 +1,8 @@
-									README 
-===============================================================================
-							Reduce 2D-3D application 
+
+Reduce 2D-3D application 
 ===============================================================================
 
- Description
+Description
 -------------------------------------------------------------------------------
 Reduce 2D-3D application is a command line interface for the Multi-fragment 
 Registration Library (https://github.com/klepo/libmultifragmentregister), 
@@ -12,13 +11,13 @@ and fracture reduction of traumatized long bones.
 
 Version from 12 July 2017.
 
- Binaries
+Binaries
 -------------------------------------------------------------------------------
 The 32-bit binaries with all dependent libraries are available 
 in the "bin/x86/release" folder.
 
  
- Examples
+Examples
 -------------------------------------------------------------------------------
 There are two examples focused on reconstruction of fractured tibia and femur.
 Please copy the folder "Reduce2D3D_examples" to the "C:/Reduce2D3D_examples"
@@ -29,7 +28,7 @@ reduce2d3d.exe C:/Reduce2D3D_examples/femur/ reduce.manual.xml
 
 
     
- Prerequisites
+Prerequisites
 -------------------------------------------------------------------------------
 Qt Toolkit in version 5.x or later is required. Other required librarires are 
 redistributed within the registration library package. The libraries are 
@@ -45,7 +44,7 @@ included:
 The library has been developped for usage with Windows 7 or later.
    
    
- Downloading
+Downloading
 -------------------------------------------------------------------------------
 
 The Reduce2D3D application can be further redistributed under the terms 
@@ -54,14 +53,14 @@ The library can be obtained from the following location:
 <http://www.fit.vutbr.cz/research/prod/?id=505>
 
 
- Acknowledgement
+Acknowledgement
 -------------------------------------------------------------------------------
 
 This work has been supported by the Technology Agency of the Czech Republic 
 (TA CR, Project Id: TA04011606).
 
 
- Authors
+Authors
 -------------------------------------------------------------------------------
 
  * Ondrej Klima     (<iklima@fit.vutbr.cz>)
@@ -70,7 +69,7 @@ This work has been supported by the Technology Agency of the Czech Republic
  * Pavel Zemcik     (<zemcik@stud.fit.vutbr.cz>)
 
  
- References
+References
 -------------------------------------------------------------------------------
 
 [1] KLIMA Ondrej, KLEPARNIK Petr, SPANEL Michal a ZEMCIK Pavel. Intensity-based 
